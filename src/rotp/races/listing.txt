@@ -3,10 +3,15 @@
 Alkari
 Bulrathi
 Darlok
+EarlyGame
 Human
+JackTrades
 Klackon
 Meklar
+Monocle
 Mrrshan
+NeoHuman
 Psilon
 Sakkra
 Silicoid
+WarDemon

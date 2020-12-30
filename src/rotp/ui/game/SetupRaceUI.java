@@ -40,7 +40,7 @@ import rotp.ui.RotPUI;
 
 public final class SetupRaceUI extends BasePanel implements MouseListener, MouseMotionListener {
     private static final long serialVersionUID = 1L;
-    static final int MAX_RACES = 10;
+    static final int MAX_RACES = 15; // modnar: increase MAX_RACES to add new Races
     int MAX_COLORS = 16; // modnar: add new colors
     int FIELD_W;
     int FIELD_H;
@@ -382,16 +382,18 @@ public final class SetupRaceUI extends BasePanel implements MouseListener, Mouse
         drawBorderedString(g, title, 2, x0, y0, Color.darkGray, Color.white);
 
         // draw shading
+		// modnar: extend out for new Races
         g.setColor(GameUI.setupShade());
-        g.fillRect(scaled(205), s95, scaled(825), scaled(515));
+        g.fillRect(scaled(105), s95, scaled(925), scaled(515));
 
         // draw race frame
         g.setColor(GameUI.setupFrame());
         g.fillRect(scaled(420), scaled(103), scaled(395), scaled(499));
 
         // draw race left gradient
+		// modnar: extend out for new Races
         g.setPaint(GameUI.raceLeftBackground());
-        g.fillRect(scaled(220), scaled(115), scaled(200), scaled(475));
+        g.fillRect(scaled(120), scaled(115), scaled(300), scaled(475));
 
         // draw race right gradient
         g.setPaint(GameUI.raceRightBackground());
@@ -401,20 +403,26 @@ public final class SetupRaceUI extends BasePanel implements MouseListener, Mouse
         int buttonH = s45;
         int buttonW = scaled(220);
 
-        int xL = scaled(234);
-        int xR = scaled(325);
+        int xL = scaled(134); // modnar: shift columns over for old Races
+		int xCC = scaled(225); // modnar: shift columns over for old Races
+        int xR = scaled(325); // modnar: set column for new Races
 
         Composite comp = AlphaComposite.getInstance(AlphaComposite.SRC_OVER , 0.3f);
         drawRaceBox(g, 0, xL, scaled(125), comp);
-        drawRaceBox(g, 1, xR, scaled(125), comp);
+        drawRaceBox(g, 1, xCC, scaled(125), comp);
         drawRaceBox(g, 2, xL, scaled(218), comp);
-        drawRaceBox(g, 3, xR, scaled(218), comp);
+        drawRaceBox(g, 3, xCC, scaled(218), comp);
         drawRaceBox(g, 4, xL, scaled(311), comp);
-        drawRaceBox(g, 5, xR, scaled(311), comp);
+        drawRaceBox(g, 5, xCC, scaled(311), comp);
         drawRaceBox(g, 6, xL, scaled(403), comp);
-        drawRaceBox(g, 7, xR, scaled(403), comp);
+        drawRaceBox(g, 7, xCC, scaled(403), comp);
         drawRaceBox(g, 8, xL, scaled(496), comp);
-        drawRaceBox(g, 9, xR, scaled(496), comp);
+        drawRaceBox(g, 9, xCC, scaled(496), comp);
+		drawRaceBox(g, 10, xR, scaled(125), comp); // modnar: add new Races
+        drawRaceBox(g, 11, xR, scaled(218), comp); // modnar: add new Races
+		drawRaceBox(g, 12, xR, scaled(311), comp); // modnar: add new Races
+		drawRaceBox(g, 13, xR, scaled(403), comp); // modnar: add new Races
+		drawRaceBox(g, 14, xR, scaled(496), comp); // modnar: add new Races
 
         // draw color buttons on right panel
         int xC = scaled(830);

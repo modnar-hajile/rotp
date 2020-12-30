@@ -1,0 +1,22 @@
+// all possible names
+name: NeoHuman, Cosmopolitan, Mudokon, Nephalem, Novan
+
+desc1: Erratic Industrialists
+desc2: Weak Moochers with Rich Planet
+desc3: The smarmy NeoHumans are masters at pissing everyone else off.
+
+// possible home system names
+home: NeoNewEarth, Metropolis, OddPrime, Niflheim, TerraNova
+
+title:     Alpha
+fulltitle: Alpha
+
+// possible leader names
+leader: A-A-ron, Djjezzuss, Rykkhard, Tymotthie, #YOLO, Chad
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Seeker, Messenger, Patrol, Sentry, Survey, Courier, Explorer
+ship2: Brigade, Shrike, Commando, Frigate, Corvette, Gunboat, Fighter
+ship3: Vanguard, Harrier, Defender, Carrier, Cruiser, Escort, Warship
+ship4: Dreadstar, Devastator, War Cruiser, Avenger, Dreadnought, Battleship, Destroyer
+

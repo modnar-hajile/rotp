@@ -1,0 +1,9 @@
+// race-specific variables (must start with _)
+_empire                           | NeoHuman Conglomerate, Novan Conglomerate, Cosmopolitan Conglomerate, Mudokon Conglomerate, Nephalem Conglomerate
+_race                             | NeoHuman, Novan, Cosmopolitan, Mudokon, Nephalem
+_race_plural                      | NeoHumans, Novans, Cosmopolitans, Mudokons, Nephalems
+_title                            | Alpha
+_nameTitle                        | Alpha
+
+
+GOVT_EMPIRE                       | %1 Conglomerate

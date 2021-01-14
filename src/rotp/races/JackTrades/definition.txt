@@ -128,4 +128,4 @@ diplomod: 5,110,5,5
 research: 90,90,90,90,90,90
 
 // race relations
-relations: DEFAULT=7,RACE_DEALWITHIT=-21,RACE_MONOCLE=0
+relations: DEFAULT=7,RACE_JACKTRADES=31,RACE_MONOCLE=0

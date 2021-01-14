@@ -1,9 +1,9 @@
 // race-specific variables (must start with _)
-_empire                           | NeoHuman Conglomerate, Novan Conglomerate, Cosmopolitan Conglomerate, Mudokon Conglomerate, Nephalem Conglomerate
-_race                             | NeoHuman, Novan, Cosmopolitan, Mudokon, Nephalem
-_race_plural                      | NeoHumans, Novans, Cosmopolitans, Mudokons, Nephalems
-_title                            | Alpha
-_nameTitle                        | Alpha
+_empire                           | NeoHuman Development, Borromean Development, Euclidean Development, Riemannian Development, Biquaternion Development
+_race                             | NeoHuman, Borromean, Euclidean, Riemannian, Biquaternion
+_race_plural                      | NeoHumans, Borromeans, Euclideans, Riemannians, Biquaternions
+_title                            | Master Architect
+_nameTitle                        | Master Architect
 
 
-GOVT_EMPIRE                       | %1 Conglomerate
+GOVT_EMPIRE                       | %1 Development

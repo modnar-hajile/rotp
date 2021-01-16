@@ -1,9 +1,9 @@
 JackWin        | races/JackTrades/WinSplash.jpg
 JackLoss       | races/JackTrades/LossSplash.jpg
 
-JackFlagWar  | races/Bulrathi/banner_war.png
-JackFlagNorm | races/Bulrathi/banner_norm.png
-JackFlagPact | races/Bulrathi/banner_pact.png
+JackFlagWar  | races/JackTrades/banner_war.png
+JackFlagNorm | races/JackTrades/banner_norm.png
+JackFlagPact | races/JackTrades/banner_pact.png
 
 JackDlgWar   | races/Bulrathi/dialogue_war.png
 JackDlgNorm  | races/Bulrathi/dialogue_norm.png

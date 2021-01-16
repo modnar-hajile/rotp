@@ -1,7 +1,7 @@
 
-NeoFlagWar    | races/Human/banner_war.png
-NeoFlagNorm   | races/Human/banner_norm.png
-NeoFlagPact   | races/Human/banner_pact.png
+NeoFlagWar    | races/NeoHuman/banner_war.png
+NeoFlagNorm   | races/NeoHuman/banner_norm.png
+NeoFlagPact   | races/NeoHuman/banner_pact.png
 
 NeoDlgWar     | races/Human/dialogue_war.png
 NeoDlgNorm    | races/Human/dialogue_norm.png

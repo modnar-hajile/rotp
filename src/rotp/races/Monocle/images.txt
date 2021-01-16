@@ -1,6 +1,6 @@
-MonoFlagWar   | races/Silicoid/banner_war.png
-MonoFlagNorm  | races/Silicoid/banner_norm.png
-MonoFlagPact  | races/Silicoid/banner_pact.png
+MonoFlagWar   | races/Monocle/banner_war.png
+MonoFlagNorm  | races/Monocle/banner_norm.png
+MonoFlagPact  | races/Monocle/banner_pact.png
 
 MonoDlgWar    | races/Silicoid/dialogue_war.png
 MonoDlgNorm   | races/Silicoid/dialogue_norm.png

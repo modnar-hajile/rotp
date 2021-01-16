@@ -1,9 +1,9 @@
 WarWin        | races/WarDemon/WinSplash.jpg
 WarLoss       | races/WarDemon/LossSplash.jpg
 
-WarFlagWar    | races/Darlok/banner_war.png
-WarFlagNorm   | races/Darlok/banner_norm.png
-WarFlagPact   | races/Darlok/banner_pact.png
+WarFlagWar    | races/WarDemon/banner_war.png
+WarFlagNorm   | races/WarDemon/banner_norm.png
+WarFlagPact   | races/WarDemon/banner_pact.png
 
 WarDlgWar     | races/Darlok/dialogue_war.png
 WarDlgNorm    | races/Darlok/dialogue_norm.png

@@ -1,6 +1,6 @@
-EarlyFlagWar  | races/Meklar/banner_war.png
-EarlyFlagNorm | races/Meklar/banner_norm.png
-EarlyFlagPact | races/Meklar/banner_pact.png
+EarlyFlagWar  | races/EarlyGame/banner_war.png
+EarlyFlagNorm | races/EarlyGame/banner_norm.png
+EarlyFlagPact | races/EarlyGame/banner_pact.png
 
 EarlyDlgWar   | races/Meklar/dialogue_war.png
 EarlyDlgNorm  | races/Meklar/dialogue_norm.png

@@ -4,6 +4,7 @@ Alkari
 Bulrathi
 Darlok
 EarlyGame
+GearHead
 Human
 JackTrades
 Klackon

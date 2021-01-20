@@ -91,7 +91,7 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     @Override
     public int numPlayers()                      { return 1; }
     @Override
-    public int numColors()                       { return 15; } // modnar: added new colors, but this value should stay == numRaces
+    public int numColors()                       { return 16; } // modnar: added new colors, but this value should stay == numRaces
     @Override
     public NewPlayer selectedPlayer()            { return player; }
 /*
@@ -662,6 +662,7 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
 		list.add("RACE_JACKTRADES"); // modnar: add races
 		list.add("RACE_EARLYGAME"); // modnar: add races
 		list.add("RACE_WARDEMON"); // modnar: add races
+        list.add("RACE_GEARHEAD"); // modnar: add races
         return list;
     }
     @Override
@@ -746,7 +747,7 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         list1a.add(15);
 
         // start repeating the 10-color list for copies of races (up to 5 per race)
-		// modnar: due to new Races, get 15 colors
+		// modnar: due to new Races, get 16 colors
         List<Integer> list2 = new ArrayList<>(list1);
         list2.addAll(list1a);
         List<Integer> list3 = new ArrayList<>(list2);
@@ -759,13 +760,13 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         Collections.shuffle(list3);
         Collections.shuffle(list4);
         Collections.shuffle(list5);
-		// modnar: due to new colors, only add first 15 colors of shuffled lists, subList(0,15)
+		// modnar: due to new colors, only add first 16 colors of shuffled lists, subList(0,16)
         colors.addAll(list1);
-        colors.addAll(list1a.subList(0,5));
-        colors.addAll(list2.subList(0,15));
-        colors.addAll(list3.subList(0,15));
-        colors.addAll(list4.subList(0,15));
-        colors.addAll(list5.subList(0,15));
+        colors.addAll(list1a.subList(0,6));
+        colors.addAll(list2.subList(0,16));
+        colors.addAll(list3.subList(0,16));
+        colors.addAll(list4.subList(0,16));
+        colors.addAll(list5.subList(0,16));
     }
     private void initOpponentRaces() {
     }

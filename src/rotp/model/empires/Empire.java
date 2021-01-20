@@ -750,6 +750,11 @@ public final class Empire implements Base, NamedObject, Serializable {
             addReserve(col.production() * col.colonyTaxPct());
             col.nextTurn();
         }
+        
+        // modnar: newRace GearHead gets 0.25 BC directly from 1.0 POP
+        if (race().homeworldKey() == 10101)
+            addToTreasury(0.25f*totalPlanetaryPopulation());
+        
         recalcPlanetaryProduction();
     }
     public void postNextTurn() {
@@ -2819,9 +2824,13 @@ public final class Empire implements Base, NamedObject, Serializable {
         if (totalEmpireShipMaintenanceCost < 0) {
             int[] counts = galaxy().ships.shipDesignCounts(id);
             float cost = 0;
+            // modnar: newRace GearHead gets 50% ship maintenance cost
+            float raceBonus = 1.0f;
+            if (race().homeworldKey() == 10101)
+                raceBonus = 0.5f;
             for (int i=0;i<counts.length;i++) 
                 cost += (counts[i] * shipLab.design(i).cost());      
-            totalEmpireShipMaintenanceCost = cost * SHIP_MAINTENANCE_PCT;
+            totalEmpireShipMaintenanceCost = cost * SHIP_MAINTENANCE_PCT * raceBonus;
         }
         
         return totalEmpireShipMaintenanceCost;
@@ -2829,21 +2838,29 @@ public final class Empire implements Base, NamedObject, Serializable {
     public float totalStargateCost() {
         if (totalEmpireStargateCost < 0) {
             float totalCostBC = 0;
+            // modnar: newRace GearHead gets 50% stargate maintenance cost
+            float raceBonus = 1.0f;
+            if (race().homeworldKey() == 10101)
+                raceBonus = 0.5f;
             List<StarSystem> allSystems = new ArrayList<>(allColonizedSystems());
             for (StarSystem sys: allSystems)
                 totalCostBC += sys.colony().shipyard().stargateMaintenanceCost();
-            totalEmpireStargateCost = totalCostBC;
+            totalEmpireStargateCost = totalCostBC * raceBonus;
         }
         return totalEmpireStargateCost;
     }
     public float totalMissileBaseCost() {
         if (totalEmpireMissileBaseCost < 0) {
             float totalCostBC = 0;
+            // modnar: newRace GearHead gets 50% base maintenance cost
+            float raceBonus = 1.0f;
+            if (race().homeworldKey() == 10101)
+                raceBonus = 0.5f;
             List<StarSystem> allSystems = new ArrayList<>(allColonizedSystems());
             Map<MissileBase, Float> baseCosts = new HashMap<>();
             for (StarSystem sys: allSystems)
                 totalCostBC += sys.colony().defense().missileBaseMaintenanceCost(baseCosts);
-            totalEmpireMissileBaseCost = totalCostBC;
+            totalEmpireMissileBaseCost = totalCostBC * raceBonus;
         }
         return totalEmpireMissileBaseCost;
     }

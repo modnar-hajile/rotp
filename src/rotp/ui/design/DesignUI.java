@@ -1035,6 +1035,58 @@ public class DesignUI extends BasePanel {
                 Image img = icon(key).getImage();
                 int w0 = img.getWidth(null);
                 int h0 = img.getHeight(null);
+                
+                // modnar: START test ship color hue shift
+                BufferedImage rawImg = new BufferedImage(w0, h0, BufferedImage.TYPE_INT_ARGB);
+                rawImg.getGraphics().drawImage(img, 0, 0 , null);
+                float hueShift = (float)(shipDesign().wpnCount(0)/360.0f);
+                
+                BufferedImage HueImg = new BufferedImage(w0, h0, BufferedImage.TYPE_INT_ARGB);
+                
+                int[] rgb = rawImg.getRGB(0, 0, w0, h0, null, 0, w0);
+                for (int i = 0; i < rgb.length; i++) {
+                    int A = (rgb[i] >> 24) & 0xff;
+                    int R = (rgb[i] >> 16) & 0xff;
+                    int G = (rgb[i] >> 8) & 0xff;
+                    int B = (rgb[i]) & 0xff;
+                    
+                    float HSV[]=new float[3];
+                    Color.RGBtoHSB(R, G, B, HSV);
+                    
+                    if (((R >= G)&&(R > B)&&(player().race().id.equalsIgnoreCase("RACE_HUMAN"))) // check for red pixel values && "RACE_HUMAN" DONE
+                        || ((R >= G)&&(R > B)&&(player().race().id.equalsIgnoreCase("RACE_ALKARI"))) // check for yellow pixel values && "RACE_ALKARI" DONE
+                        || ((G >= 4*R/5)&&(G > B)&&!(R > 180)&&(player().race().id.equalsIgnoreCase("RACE_BULRATHI"))) // check for green-ish pixel values && "RACE_BULRATHI" DONE-ish, not perfect
+                        || ((B >= G)&&(B > R)&&(player().race().id.equalsIgnoreCase("RACE_MEKLAR"))) // check for blue pixel values && "RACE_MEKLAR" DONE
+                        || (player().race().id.equalsIgnoreCase("RACE_KLACKON")) // "RACE_KLACKON", full image hue shift DONE
+                        || (player().race().id.equalsIgnoreCase("RACE_MRRSHAN")) // "RACE_MRRSHAN", full image hue shift DONE
+                        || (player().race().id.equalsIgnoreCase("RACE_SAKKRA")) // "RACE_SAKKRA", full image hue shift DONE
+                        || (player().race().id.equalsIgnoreCase("RACE_PSILON")) // "RACE_PSILON", below
+                        || (player().race().id.equalsIgnoreCase("RACE_DARLOK")) // "RACE_DARLOK", below
+                        || (((HSV[0]>0.58f)&&(HSV[0]<0.70f))&&(player().race().id.equalsIgnoreCase("RACE_SILICOID"))) // check by gray hues && "RACE_SILICOID", below
+                        ) { 
+                        
+                        if (((HSV[1]<0.5f)&&((player().race().id.equalsIgnoreCase("RACE_DARLOK")))) // check by low saturation && "RACE_DARLOK" DONE
+                            || (player().race().id.equalsIgnoreCase("RACE_SILICOID")) // check "RACE_SILICOID" DONE-ish
+                            ) { 
+                            Color.RGBtoHSB(5*R/4, 2*G/3, 2*B/3, HSV); // create some color out of gray, then pass to HSV
+                        }
+                        
+                        int newRGB = Color.getHSBColor(hueShift+HSV[0],HSV[1],HSV[2]).getRGB();
+                        
+                        if (!(((HSV[0]<0.06f)||(HSV[0]>0.94f))||((HSV[0]<0.1f)&&(R > 225))||((R >= G)&&(R+G > 430)&&(R+G > 3.5f*B)))&&((player().race().id.equalsIgnoreCase("RACE_PSILON")))) { // check for NOT red-ish and NOT bright yellow pixel values && RACE_PSILON DONE-ish (slow...)
+                            newRGB = Color.getHSBColor(HSV[0],HSV[1],HSV[2]).getRGB(); // revert those RGB without adding in hueShift
+                        }
+                        
+                        R = (newRGB >> 16) & 0xff;
+                        G = (newRGB >> 8) & 0xff;
+                        B = (newRGB) & 0xff;
+                    }
+                    rgb[i] = (A << 24) | (R << 16) | (G << 8) | B;
+                }
+                HueImg.setRGB(0, 0, w0, h0, rgb, 0, w0);
+                img = HueImg;
+                // modnar: END test ship color hue shift
+                
                 float scale = min((float)(shipW-s20)/w0, (float)(shipH-s20)/h0);
 
                 int w1 = (int)(scale*w0);
@@ -1072,6 +1124,7 @@ public class DesignUI extends BasePanel {
         }
         @Override
         public void animate() {
+            loadShipImages(); // modnar: force reload ship images for hue shift test
             repaintShip();
         }
         @Override

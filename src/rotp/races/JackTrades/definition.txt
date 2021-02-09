@@ -71,9 +71,9 @@ council:       JackCouncil
 shield:        JackFortShield,    0@0|420x450
 introTextX:    680
 espionageXY:   0@0
-spyFactories:  45
-spyMissiles:   45
-spyRebellion:  45
+spyFactories:  0
+spyMissiles:   0
+spyRebellion:  0
 dialogTextX:   180,180
 dialogTextY:   550
 councilDiplo:  0.4, 375, -160, 0.6

@@ -784,7 +784,10 @@ public final class Empire implements Base, NamedObject, Serializable {
         }
     }
     public void assessTurn() {
-        log(this + ": AssessTurn");
+         log(this + ": AssessTurn"); 
+        // have to assess trade & security views
+        // before colonies since taxes may change  
+        empireViewsAssessTurn();
         recalcPlanetaryProduction();
 
         if (status() != null)
@@ -800,6 +803,14 @@ public final class Empire implements Base, NamedObject, Serializable {
         for (StarSystem sys: systems) {
             if (sys.isColonized())
                 sys.colony().lowerECOToCleanIfEcoComplete();
+        }
+    }
+    public void empireViewsAssessTurn() {
+        for (EmpireView v : empireViews()) {
+            if ((v!= null) && v.embassy().contact()) {
+                v.embassy().assessTurn();
+                v.trade().assessTurn();
+            }
         }
     }
     public void makeDiplomaticOffers() {
@@ -2384,6 +2395,15 @@ public final class Empire implements Base, NamedObject, Serializable {
         }
         return n;
     }
+    public List<Empire> warEnemies() {
+        List<Empire> r = new ArrayList<>();
+        for (EmpireView v : empireViews()) {
+            if ((v!= null) && !v.empire().extinct
+            && v.embassy().anyWar())
+                r.add(v.empire());
+        }
+        return r;
+    }
     public List<Empire> enemies() {
         List<Empire> r = new ArrayList<>();
         for (EmpireView v : empireViews()) {
@@ -3258,13 +3278,7 @@ public final class Empire implements Base, NamedObject, Serializable {
                     session().status().winMilitary();
             }
             else {
-                boolean allAlliedWithPlayer = true;
-                int playerId = player().id;
-                for (Empire emp: activeEmpires) {
-                    if (!emp.alliedWith(playerId))
-                        allAlliedWithPlayer = false;
-                }
-                if (allAlliedWithPlayer) 
+                if (galaxy().allAlliedWithPlayer()) 
                     session().status().winMilitaryAlliance();
             }
         }            

@@ -1172,7 +1172,7 @@ public class DesignUI extends BasePanel {
                 int h0 = img.getHeight(null);
                 
                 // modnar: START test ship color hue shift
-                
+                /*
                 BufferedImage rawImg = new BufferedImage(w0, h0, BufferedImage.TYPE_INT_ARGB);
                 BufferedImage HueImg = new BufferedImage(w0, h0, BufferedImage.TYPE_INT_ARGB);
                 rawImg.getGraphics().drawImage(img, 0, 0 , null);
@@ -1237,7 +1237,7 @@ public class DesignUI extends BasePanel {
                 // set the array of RGB pixels as hue shifted BufferedImage
                 HueImg.setRGB(0, 0, w0, h0, rgb, 0, w0);
                 img = HueImg; // replace img
-                
+                */
                 // modnar: NOTE: one additional line (~15 lines below) in animate() to force ship image reload after color change
                 // modnar: END test ship color hue shift
                 
@@ -1278,7 +1278,7 @@ public class DesignUI extends BasePanel {
         }
         @Override
         public void animate() {
-            loadShipImages(); // modnar: force reload ship images for hue shift test
+            //loadShipImages(); // modnar: force reload ship images for hue shift test
             repaintShip();
         }
         @Override

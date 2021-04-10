@@ -4,6 +4,7 @@ name: WarDemon, Valkyrie, Einherjar, Androktasia, Fremen
 desc1: Aggressive Militarist
 desc2: Skilled in All Areas of Warfare
 desc3: The [race]s are unnaturally tenacious in both space and ground combat.
+desc4: Ground ATK +20, Ship ATK +3, Ship DEF/INIT +2
 
 // possible home system names
 home:  Abyss, Valhalla, Ragnarok, Harrogath, Arrakis

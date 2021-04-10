@@ -4,6 +4,7 @@ name: NeoHuman, Borromean, Euclidean, Riemannian, Biquaternion
 desc1: Erratic Industrialists
 desc2: Weak Fighters with Spacious Ships and a Rich Planet
 desc3: The diminutive NeoHumans sacrifice ship armor for extra ship space.
+desc4: Rich-80, Ground ATK -20, Ship Space +40%, Ship HP -33.3%
 
 // possible home system names
 home: NeoNewEarth, TARDIS, Poiuyt, Klein, Tesseract

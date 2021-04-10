@@ -4,6 +4,7 @@ name: Early-Game, Rush-Rush, Blitzin, Alpha-Strike, Zuul
 desc1: Erratic Militarist
 desc2: Super Homeworld, Subpar Future
 desc3: The participants of the [race] Anarchy seek their 15-minutes of fame.
+desc4: Ultra-Rich-150, Research -10%, POP Growth/Productivity -10%, Diplomacy -10%
 
 // possible home system names
 home: Quick, Speed, Rapid, Fast, First

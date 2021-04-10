@@ -4,6 +4,7 @@ name: Jack-Trades, Red-Mage, Renaissance-Man, All-in-One, Master-None
 desc1: Random Random
 desc2: Jack of All Trades
 desc3: The versatile [race] is better than average in all fields.
+desc4: Almost Everything +5%/+10%
 
 // possible home system names
 home: Joker, Heart, Club, Diamond, Spade

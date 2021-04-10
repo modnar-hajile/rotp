@@ -4,6 +4,7 @@ name: Unas, Kull, Jaffa, Ashrak, Goa'uld
 desc1: Ruthless Technologist
 desc2: Unproductive Workers on Fertile Artifact Planet
 desc3: The [race] work as if in a daze, yet are somehow aware of all scientific possibilities.
+desc4: Artifact-120, Spying +10%, Full Tech Tree, POP Productivity -20%
 
 // possible home system names
 home: P3X-888, Abydos, Chulak, Dakara, Lantea
